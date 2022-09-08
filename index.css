@@ -1,0 +1,276 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html, body {
+    width: 100%; height: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    background-color: #171717;
+}
+
+::selection {
+    background-color: #C2C2C2; color: #171717;
+}
+
+@font-face {
+    font-family: Farenheight;
+    src: url(Resources/Farenheight.ttf);
+}
+
+@font-face {
+    font-family: Typewriter;
+    src: url(Resources/Typewriter.ttf);
+}
+
+#content {
+    display: none;
+} 
+
+.warn {
+    font-family: 'Typewriter'; display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 100%; font-size: large; color: #C2C2C2;
+}
+
+@media (width: 1920px) and (height: 1080px) { 
+    .warn {
+        display: none;
+    }
+    #content {
+        display: block;
+    }
+    #startpage {
+        width: 100%; height: 100%;
+        position: absolute;
+    }
+
+    .title {
+        font-size: 100px; position: absolute; width: 30%; text-align: center; height: 50%; text-shadow: -1px 1px 3px #171717; user-select: none;
+        font-family: 'Farenheight'; color: #C2C2C2; display: flex; align-items: center; justify-content: center; right: 0; top: 130px; transition: .3s;
+    }
+    
+    .footage1 {
+        display: block;
+        width: 70%; height: 100%;
+    }
+    
+    .button {
+        box-sizing: border-box; cursor: pointer; user-select: none;
+        background-color: #C2C2C2;border: 3px solid #C2C2C2; transition: .3s;
+        width: 200px; height: 60px; position: absolute; top: 700px; right: 188px;
+        font-family: 'Typewriter'; font-size: 20px; color: #171717; display: flex; align-items: center; justify-content: center;
+    }
+
+    .button:hover {
+        background-color: #171717; color: #C2C2C2;
+    }
+
+    .button:active {
+        border-color: #FF0505; color: #FF0505;
+    }
+
+    .button:active ~ .title {
+        color: #FF0505;
+    }
+
+    .button.red {
+        border-color: #FF0505; color: #FF0505; background-color: #171717;
+    }
+
+    .button.red ~ .title {
+        color: #FF0505;
+    }
+
+    @keyframes disappear {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    @keyframes appear {
+        0% {
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+    .closed {
+        opacity: 1;
+        animation: disappear 1.5s ease-out .2s forwards;
+    }
+
+    .opened {
+        opacity: 0;
+        animation: appear 1.5s ease-out 1.7s forwards;
+    }
+
+    .subpage {
+        width: 100%; height: 100%; display: none; opacity: 0;
+    }
+
+    .intro {
+        display: none;
+        width: 100%; height: 100%;
+    }
+
+    .intro h2, .intro h1 {
+        opacity: 0; position: absolute; font-family: 'Typewriter';
+        width: 1920px; text-align: center; color: #C2C2C2;
+    }
+
+    .intro h2 {
+        font-size: 25px; top: 507.5px;
+    }
+    .intro h1{
+        font-size: 40px; font-style: italic; top: 532.5px; 
+    }
+
+    .p01 img {
+        width: 1920px; height: auto; position: absolute; top: 0; left: 0;
+    }
+
+    .p01 h1 {
+        font-size: 40px; color: #C2C2C2;
+        font-family: 'Typewriter'; position: absolute; bottom: 325.5px; left: 50px;
+        width: 708px; text-align: center; font-weight: bold;
+    }
+
+    .p01 p {
+        color: #C2C2C2; font-size: 25px; font-family: 'Typewriter'; position: absolute; width: 1012px; bottom: 295.5px; right: 100px; text-align: justify;
+    }
+
+    .next {
+        box-sizing: border-box; transition: .2s; border: none; font-size: 30px; color: #C2C2C2; font-family: 'Typewriter'; padding: 0; cursor: pointer; user-select: none;
+        height: 50px; width: 1720px; background-color: transparent; position: absolute; right: 100px; top: 950px; text-align: right; border-bottom: 0 solid #C2C2C2;
+    }
+
+    .next:hover {
+        border-bottom: 5px solid #C2C2C2;
+    }
+
+    .next:active {
+        border-bottom-color: #FF0505; color: #FF0505;
+    }
+
+    .p02 img {
+        width: 600px; height: auto;
+        position: absolute; top: 331.5px; left: 100px;
+    }
+
+    .p02 p {
+        color: #C2C2C2; font-size: 25px; font-family: 'Typewriter'; position: absolute; width: 1020px; top: 297.5px; right: 100px; text-align: justify;
+    }
+
+    .p03 h1 {
+        color: #C2C2C2; font-size: 50px; font-family: 'Farenheight'; position: absolute; width: 1920px; text-align: center; top: 475px; left: 0; 
+    }
+
+    .p04 .img1 {
+        height: 400px; width: auto; top: 100px;
+        position: absolute; left: 100px;
+    }
+
+    .p04 .ppp1 {
+        width: 906px; color: #C2C2C2; font-size: 25px; font-family: 'Typewriter'; position: absolute;
+        top: 250px; text-align: justify; right: 100px;
+    }
+
+    .p04 .ppp2 {
+        width: 662px; color: #C2C2C2; font-size: 25px; font-family: 'Typewriter'; position: absolute;
+        top: 625px; text-align: justify; left: 100px;
+    }
+
+    .p04 .img2 {
+        height: 400px; width: auto; top: 500px;
+        position: absolute; right: 100px;
+    }
+
+    .p05 img {
+        width: 600px; top: 100px; left: 660px; position: absolute;
+    }
+
+    .p05 p {
+        width: 1720px; font-size: 25px; font-family: 'Typewriter'; position: absolute; top: 650px; color: #C2C2C2; left: 100px; text-align: center;
+    }
+
+    .p06 img {
+        height: 550px; top: 300px; left: 365px; position: absolute;
+    }
+
+    .p06 p {
+        width: 1720px; font-size: 25px; font-family: 'Typewriter'; position: absolute; top: 137.5px; color: #C2C2C2; left: 100px; text-align: center;
+    }
+
+    .p07 img {
+        width: 700px; top: 354px; right: 100px; position: absolute;
+    }
+
+    .p07 p {
+        width: 920px; font-size: 25px; font-family: 'Typewriter'; position: absolute; top: 390px; color: #C2C2C2; left: 100px; text-align: justify;
+    }
+
+    .p08 p {
+        position: absolute; font-family: 'Typewriter'; left: 100px;
+        width: 1720px; text-align: center; color: #C2C2C2;
+        font-size: 30px; top: 440px; 
+    }
+
+    .p09 h1 {
+        font-family: 'Typewriter'; width: 1920px; text-align: center; color: #C2C2C2;
+        font-size: 70px; top: 505px; position: absolute;
+    }
+} 
